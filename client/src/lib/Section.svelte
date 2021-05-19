@@ -19,7 +19,7 @@
 </script>
 
 <div class=container>
-	<h2 on:click={toggleOpen}>
+	<h2 on:click={toggleOpen} on:contextmenu>
 		<span>{open ? _DOWN_ARROW : _RIGHT_ARROW}</span>
 		{name}
 	</h2>

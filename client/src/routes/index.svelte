@@ -8,6 +8,7 @@
 	import {angleDiff, clamp, clampMagnitude, dist, mapRanges} from '../util/math.js';
 	import Ship, {getArmamentType} from '../lib/Ship.svelte';
 	import Chat from '../lib/Chat.svelte';
+	import ContextMenu from '../lib/ContextMenu.svelte';
 	import Instructions from '../lib/Instructions.svelte';
 	import Leaderboard from '../lib/Leaderboard.svelte';
 	import Status from '../lib/Status.svelte';
@@ -970,6 +971,7 @@
 			<Leaderboard label='All-time Leaderboard' leftSide={true} leaderboard={globalLeaderboard['single/all']}/>
 		{/if}
 	{/if}
+	<ContextMenu/>
 </main>
 
 <svelte:window on:keydown={handleKey} on:keyup={handleKey}/>

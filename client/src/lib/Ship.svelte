@@ -54,6 +54,7 @@
 
 <script>
 	import Section from './Section.svelte';
+	import {showContextMenu} from './ContextMenu.svelte';
 	import entityData from '../data/entities.json';
 
 	export let type;
@@ -99,7 +100,7 @@
 </script>
 
 <div class='container'>
-	<Section name={entityData[type].label}>
+	<Section name={entityData[type].label} on:contextmenu={event => showContextMenu(event, {'Read more': () => alert('foo')})}>
 		{#each groupArmaments(armaments, consumption) as [type, group]}
 			<div class='button' class:selected={type === selection} on:click={() => selection = type}>
 				<img title={entityData[group.type].label + (group.airdrop ? ' (Airdropped)' : '')} class:consumed={group.ready === 0} src={`/sprites/${group.type}.png`}/>
